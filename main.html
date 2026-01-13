@@ -167,6 +167,7 @@
         .c-options {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 12px;
             font-size: 20px;
             margin-top: 30px;
@@ -176,6 +177,7 @@
         .c-option {
             display: block;
             width: fit-content;
+            margin-top: 12px;
             padding: 8px;
             background-color: #ffd220;
             border-radius: 15px;
@@ -221,6 +223,12 @@
             align-items: center;
             top: 200px;
         }
+        a:hover{
+            color: #6b4f2c;
+        }
+        .dropdown-content button:hover{
+            background-color: green;
+        }
     </style>
 </head>
 
@@ -238,9 +246,8 @@
                 <li>
                     <button class="fun-btn">Fun zone ▾</button>
                     <div class="dropdown-content">
-                        <a href="">Name Generator</a>
-                        <a href="">Doggy Quiz</a>
-                        <a href="">Woof Style</a>
+                        <button id="namegen">Name Generation</button>
+                        <button id="woofstyle">Woof Style</button>
                     </div>
                 </li>
             </ul>
@@ -255,22 +262,19 @@
 
             <h1 id="Woof">Woof Style</h1>
 
-            <p id="explanation">Woof Style is a fun and interactive website for dog lovers where you can explore dog breeds, get some caring guides, take a personality quiz, name generation for your dog and enjoy dog themed activities.</p>
+            <p id="explanation">Woof Style is a fun and interactive website for dog lovers where you can explore dog breeds, get some caring guides, name generation for your dog and enjoy dog themed activities.</p>
 
         </div>
 
         
     </div>
-    <hr>
     <div class="choose">
         <h1 id="head">
             Discover Your Perfect Dog Match
         </h1>
         <div class="c-options">
             <h2>Find the puppy breed by own</h2>
-            <a href="" class="c-option">Explore on your own</a>
-            <h2>Take a quiz and we guess the puppy breed that suits you the most</h2>
-            <a href="" class="c-option">Take a quiz</a>
+            <a href="Types.html" class="c-option">Explore on your own</a>            
         </div>
     </div>
 
