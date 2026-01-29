@@ -10,21 +10,6 @@ window.addEventListener("load", function(){
 
 });
 
-const breed_grid = document.querySelector(".breed-grid");
-
-const breed_cards = breed_grid.children;
-
-for(let card of breed_cards){
-    card.style.animationDelay = (Array.from(breed_cards).indexOf(card) * 0.2) + "s";
-}
-
-setTimeout(function(){
-    for(let card of breed_cards){
-        card.style.animation = "none";
-    }
-}, 2000);
-
-
 
 let is_visible = false;
 document.querySelector(".fun-btn").addEventListener("click", function visible(e){
