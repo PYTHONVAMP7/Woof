@@ -1,3 +1,31 @@
+window.addEventListener("load", function(){
+    const loader = document.querySelector(".loader");
+
+    setTimeout(function(){
+        loader.style.opacity = "0";
+    }, 2000);
+    setTimeout(function(){
+        loader.style.display = "none";
+    }, 3000);
+
+});
+
+const breed_grid = document.querySelector(".breed-grid");
+
+const breed_cards = breed_grid.children;
+
+for(let card of breed_cards){
+    card.style.animationDelay = (Array.from(breed_cards).indexOf(card) * 0.2) + "s";
+}
+
+setTimeout(function(){
+    for(let card of breed_cards){
+        card.style.animation = "none";
+    }
+}, 2000);
+
+
+
 let is_visible = false;
 document.querySelector(".fun-btn").addEventListener("click", function visible(e){
     e.stopPropagation(); 
