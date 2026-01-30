@@ -126,7 +126,7 @@
 
         .breed-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 60px;
         }
         @keyframes fadeIn {
@@ -141,6 +141,7 @@
         }
 
         .breed-card {
+            display: grid;
             border-radius: 15px;
             padding: 15px;
             box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
@@ -148,9 +149,24 @@
             cursor: pointer;
             animation-delay: 0.2s;
             animation: fadeIn 1s both ease-in-out;
-            transition: transform 0.35s ease;
+            transition: all 0.35s ease;
+            
         }
-
+        .breed-card.expanded {
+            width: min(90vw, 500px);
+            grid-template-columns: 1fr 1fr;
+            z-index: 10;
+            grid-column: span 2;
+        }
+        .breed-data{
+            display: none;
+            flex-direction: column;
+        }
+        .breed-data p{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 18px;
+        }
         .breed-card img {
             display: block;
             width: 100%;
@@ -187,7 +203,7 @@
         }
 
         .breed-card:hover {
-            transform: scale(1.07);
+            transform: scale(1.03);
         }
 
         
@@ -226,64 +242,89 @@
     </div>
 
     <div class="breed-grid">
-        <div class="breed-card">
-            <img src="https://i.pinimg.com/736x/61/0d/55/610d55c5e4ca3877aabf8313dd5f2c40.jpg" alt="golden-retriver">
-            <h3>Golden Retriever</h3>
-            <p>Friendly - Loyal - Intelligent</p>
+        <div class="breed-card" id="goldenretriver">
+            <div>  
+                <img src="https://i.pinimg.com/736x/61/0d/55/610d55c5e4ca3877aabf8313dd5f2c40.jpg" alt="golden-retriver">
+                <h3>Golden Retriever</h3>
+                <p>Friendly - Loyal - Intelligent</p>
+            </div>
         </div>
 
-        <div class="breed-card">
-            <img src="https://tse1.mm.bing.net/th/id/OIP.pqCoPeTCMCqGzyh-ouJHdQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+        <div class="breed-card" id="husky">
+            <div>
+                <img src="https://tse1.mm.bing.net/th/id/OIP.pqCoPeTCMCqGzyh-ouJHdQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="">
+                <h3>Husky</h3>
+                <p>Energetic - Playful - Adventurous</p>
+            </div>
+        </div>
+        <div class="breed-card" id="rottweiler">
+            <div>
+                <img src="https://i.etsystatic.com/16727049/r/il/b70236/4133436177/il_1080xN.4133436177_8sgm.jpg" alt="">
+                <h3>Rottweiler</h3>
+                <p>Strong - Loyal - Protective</p>
+            </div>
+
+        </div>
+        <div class="breed-card" id="beagle">
+            <div>
+
+                <img src="https://www.publicdomainpictures.net/pictures/550000/nahled/hund-beagle-kunst-illustration.jpg"
                 alt="">
-            <h3>Husky</h3>
-            <p>Energetic - Playful - Adventurous</p>
+                <h3>Beagle</h3>
+                <p>Friendly - Curious - Energetic</p>
+            </div>
         </div>
-        <div class="breed-card">
-            <img src="https://i.etsystatic.com/16727049/r/il/b70236/4133436177/il_1080xN.4133436177_8sgm.jpg" alt="">
-            <h3>Rottweiler</h3>
-            <p>Strong - Loyal - Protective</p>
+        <div class="breed-card" id="chihuahua">
+            <div>
+                <img src="https://i.icanvas.com/RPH271?d=2&sh=v&t=1759264736" alt="Chihuahua">
+                <h3>Chihuahua</h3>
+                <p>Loyal - Alert - Lively</p>
+            </div>
         </div>
-        <div class="breed-card">
-            <img src="https://www.publicdomainpictures.net/pictures/550000/nahled/hund-beagle-kunst-illustration.jpg"
-                alt="">
-            <h3>Beagle</h3>
-            <p>Friendly - Curious - Energetic</p>
-        </div>
-        <div class="breed-card">
-            <img src="https://i.icanvas.com/RPH271?d=2&sh=v&t=1759264736" alt="Chihuahua">
-            <h3>Chihuahua</h3>
-            <p>Loyal - Alert - Lively</p>
-        </div>
-        <div class="breed-card">
-            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToPGu934uDP0gZ_A9US5azxqcEv4Dy0mtlkQ&s"
+        <div class="breed-card" id="bulldog">
+            <div>
+                <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToPGu934uDP0gZ_A9US5azxqcEv4Dy0mtlkQ&s"
                 alt="Bulldog">
-            <h3>Bulldog</h3>
-            <p>Calm - Courageous - Friendly</p>
+                <h3>Bulldog</h3>
+                <p>Calm - Courageous - Friendly</p>
+            </div>
         </div>
 
-        <div class="breed-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReZM95U8xKK-C99yH5OkjjH0rlScvKlIIcmQ&s"
+        <div class="breed-card" id="schnauzer">
+            <div>
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReZM95U8xKK-C99yH5OkjjH0rlScvKlIIcmQ&s"
                 alt="Schnauzer">
-            <h3>Schnauzer</h3>
-            <p>Intelligent - Alert - Spirited</p>
+                <h3>Schnauzer</h3>
+                <p>Intelligent - Alert - Spirited</p>
+            </div>
         </div>
-        <div class="breed-card">
-            <img src="https://i.pinimg.com/736x/73/dc/72/73dc72fe46427acad6115d5e7f256a40.jpg" alt="Maltese">
-            <h3>Maltese</h3>
-            <p>Gentle - Playful - Affectionate</p>
+        <div class="breed-card" id="maltese">
+            <div>
+                
+                <img src="https://i.pinimg.com/736x/73/dc/72/73dc72fe46427acad6115d5e7f256a40.jpg" alt="Maltese">
+                <h3>Maltese</h3>
+                <p>Gentle - Playful - Affectionate</p>
+            </div>
         </div>
 
-        <div class="breed-card">
-            <img src="https://th.bing.com/th/id/R.04a871007c7d47fe945366d1229efd11?rik=iEhb%2bYLDvZ%2fggg&pid=ImgRaw&r=0"
+        <div class="breed-card" id="germanshepherd">
+            <div>
+                <img src="https://th.bing.com/th/id/R.04a871007c7d47fe945366d1229efd11?rik=iEhb%2bYLDvZ%2fggg&pid=ImgRaw&r=0"
                 alt="German Shepherd">
-            <h3>German Shepherd</h3>
-            <p>Intelligent - Courageous - Loyal</p>
+                <h3>German Shepherd</h3>
+                <p>Intelligent - Courageous - Loyal</p>
+            </div>
         </div>
 
-        <div class="breed-card">
-            <img src="https://img.freepik.com/premium-photo/oil-painting-pomeranian_759095-42982.jpg" alt="Pomeranian">
-            <h3>Pomeranian</h3>
-            <p>Fluffy - Energetic - Confident</p>
+        <div class="breed-card" id="pomeranian">
+            <div>
+
+                <img src="https://img.freepik.com/premium-photo/oil-painting-pomeranian_759095-42982.jpg" alt="Pomeranian">
+                <h3>Pomeranian</h3>
+                <p>Fluffy - Energetic - Confident</p>
+            </div>
         </div>
 
     </div>
@@ -293,22 +334,7 @@
         </footer>
     </div>
     <script src="script.js"></script>
-    <script>
-        const breed_grid = document.querySelector(".breed-grid");
-
-        const breed_cards = breed_grid.children;
-
-        for(let card of breed_cards){
-            card.style.animationDelay = (Array.from(breed_cards).indexOf(card) * 0.2) + "s";
-        }
-
-        setTimeout(function(){
-            for(let card of breed_cards){
-                card.style.animation = "none";
-            }
-        }, 2000);
-    </script>
-
+    <script src="breed.js"></script>
 </body>
 
 </html>
