@@ -1,12 +1,28 @@
 window.addEventListener("load", function(){
     const loader = document.querySelector(".loader");
 
-    setTimeout(function(){
-        loader.style.opacity = "0";
-    }, 2000);
-    setTimeout(function(){
+    const loaderShown = this.sessionStorage.getItem("loaderShown");
+
+    if(!loaderShown){
+        this.sessionStorage.setItem("loaderShown", "true");
+        loader.style.display = "flex";
+        setTimeout(function(){
+
+            loader.style.opacity = "0";
+            document.querySelector(".main").style.display = "block";
+        }, 2000);
+
+        setTimeout(function(){
+
+            loader.style.display = "none";
+            
+        }, 3000);
+    } 
+
+    else { 
         loader.style.display = "none";
-    }, 3000);
+        document.querySelector(".main").style.display = "block";
+    }
 
 });
 

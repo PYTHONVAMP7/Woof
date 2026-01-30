@@ -23,7 +23,9 @@
             background: linear-gradient(135deg, #ffeaa7, #f6d365);
             min-height: 100vh;
         }
-
+        .main{
+            display: none;
+        }
         .header {
             height: 70px;
             display: flex;
@@ -216,7 +218,7 @@
         .loader{
             position: fixed;
             background: linear-gradient(135deg, #ffeaa7, #f6d365);
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -268,8 +270,7 @@
             align-items: center;
         }
         .scroll{
-            animation: scroll both;
-            animation-timeline: view(70% 5%);
+            animation: scroll 1s both ease-in-out;
         }
         @keyframes scroll {
             from{
@@ -277,7 +278,7 @@
                 opacity: 0.5;
             }
             to{
-                transform: translateY(20px);
+                transform: translateY(0px);
                 opacity: 1;
             }
         }
@@ -296,7 +297,7 @@
         </div>
     </div>
 
-    
+    <div class="main">
     <div class="header">
         <div class="logo">
             <img src="Adobe Express - file.png" class="paw">
@@ -348,7 +349,7 @@
     <div class="footer">
         © 2026 Woof Style | Made by Prasum Shrestha for dogs 🐶
     </div>
-
+</div>
     <script src="script.js"></script>
 
 </body>
